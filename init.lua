@@ -151,7 +151,8 @@ local config = {
                     require("scrollbar").setup()
                 end,
             },
-            { "wfxr/minimap.vim" }
+            { "wfxr/minimap.vim" },
+            { "wakatime/vim-wakatime" },
         },
         
         ["null-ls"] = function(config) 

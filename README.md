@@ -6,6 +6,7 @@
 - Lazygit
 - nvim-minimap, with leader cmd: <leader>zm, runs: MinimapToggle
 - scrollbar
+- Wakatime - Coding metrics
 
 ## Using
 1. Clone this repo

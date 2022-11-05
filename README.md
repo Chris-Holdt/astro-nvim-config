@@ -1,9 +1,11 @@
 # Personal Astronvim configuration
 
 ## Changes vs Astronvim
-- Colour Scheme: Sonokai Espresso
+- Colour Scheme: Monokai Ristretto
 - Centerpad, with leader cmd: <leader>zf, runs: Centerpad 160 (Used on 34" Ultrawide) 
 - Lazygit
+- nvim-minimap, with leader cmd: <leader>zm, runs: MinimapToggle
+- scrollbar
 
 ## Using
 1. Clone this repo
@@ -11,7 +13,7 @@
 
 ```bash
 git clone https://github.com/Chris-Holdt/astro-nvim-config.git
-ln -s ./astro-nvim-config/init.lua ~/.config/nvim/lua/user/init.lua
+ln -s <directory>/astro-nvim-config/init.lua ~/.config/nvim/lua/user/init.lua
 ```
 
 ## Running

@@ -29,7 +29,7 @@ local config = {
         g = {
             mapleader = " ", 
             autoformat_enabled = true, 
-            cmp_enabled = true, 
+            cmp_enabled = false, 
             autopairs_enabled = true, 
             diagnostics_enabled = true, 
             status_diagnostics_enabled = true, 
@@ -137,13 +137,7 @@ local config = {
         init = {
             { "sainnhe/sonokai" },
             { "rktjmp/lush.nvim" },
-            { 
-                "tanvirtin/monokai.nvim"
-                -- "tanvirtin/monokai.nvim",
-                -- config = function()
-                --     require("monokai").setup { palette = require("monokai").ristretto }
-                -- end,
-            },
+            { "tanvirtin/monokai.nvim" },
             { "smithbm2316/centerpad.nvim" },
             { "kdheepak/lazygit.nvim" },
             { "petertriho/nvim-scrollbar",
@@ -153,6 +147,7 @@ local config = {
             },
             { "wfxr/minimap.vim" },
             { "wakatime/vim-wakatime" },
+            { "neoclide/coc.nvim", branch = "release"},
         },
         
         ["null-ls"] = function(config) 
@@ -194,5 +189,12 @@ local config = {
     polish = function()
     end,
 }
+
+-- Temporary home of custom keymap
+local keyset = vim.keymap.set
+local opts = {silent = true, noremap = true, expr = true, replace_keycodes = false}
+keyset("i", "<TAB>", [[coc#pum#visible() ? coc#pum#next(1) : "<TAB>"]], opts)
+keyset("i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "<S-TAB>"]], opts)
+keyset("i", "<c-space>", 'coc#refresh()', {silent = true, expr = true})
 
 return config

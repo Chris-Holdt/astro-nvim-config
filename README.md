@@ -7,6 +7,7 @@
 - nvim-minimap, with leader cmd: <leader>zm, runs: MinimapToggle
 - scrollbar
 - Wakatime - Coding metrics
+- CoC - Conquer of Completion - Improved code completion - Tab and S Tab to move up and down, C-Space to select
 
 ## Using
 1. Clone this repo

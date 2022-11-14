@@ -1,43 +1,45 @@
 local config = {
 
     updater = {
-        remote = "origin", 
-        channel = "nightly", 
-        version = "latest", 
-        branch = "main", 
-        commit = nil, 
-        pin_plugins = nil, 
-        skip_prompts = false, 
-        show_changelog = true, 
-        auto_reload = false, 
-        auto_quit = false, 
+        remote = "origin",
+        channel = "nightly",
+        version = "latest",
+        branch = "main",
+        commit = nil,
+        pin_plugins = nil,
+        skip_prompts = false,
+        show_changelog = true,
+        auto_reload = false,
+        auto_quit = false,
     },
 
     colorscheme = "monokai_ristretto",
     -- colorscheme = "sonokai",
-    
+
     highlights = {},
-    
+
     options = {
         opt = {
-            relativenumber = true, 
-            number = true, 
-            spell = false, 
-            signcolumn = "auto", 
-            wrap = false, 
+            relativenumber = true,
+            number = true,
+            spell = false,
+            signcolumn = "auto",
+            wrap = false,
+            tabstop = 4,
+            softtabstop = 4,
+            shiftwidth = 4,
         },
         g = {
-            mapleader = " ", 
-            autoformat_enabled = true, 
-            cmp_enabled = false, 
-            autopairs_enabled = true, 
-            diagnostics_enabled = true, 
-            status_diagnostics_enabled = true, 
-            icons_enabled = true, 
-            -- sonokai_style = "espresso",
+            mapleader = " ",
+            autoformat_enabled = true,
+            cmp_enabled = false,
+            autopairs_enabled = false,
+            diagnostics_enabled = true,
+            status_diagnostics_enabled = true,
+            icons_enabled = true,
         },
     },
-    
+
     header = {
         "░█████╗░██╗░░██╗██████╗░██╗░██████╗",
         "██╔══██╗██║░░██║██╔══██╗██║██╔════╝",
@@ -54,72 +56,31 @@ local config = {
         "  ╚═╝░░╚══╝░░░╚═╝░░░╚═╝╚═╝░░░░░╚═╝",
     },
 
-    default_theme = {
-        colors = {
-            fg = "#abb2bf",
-            bg = "#1e222a",
-        },
-        highlights = function(hl) 
-            local C = require "default_theme.colors"
-
-            hl.Normal = { fg = C.fg, bg = C.bg }
-            
-            hl.DiagnosticError.italic = true
-            hl.DiagnosticHint.italic = true
-            hl.DiagnosticInfo.italic = true
-            hl.DiagnosticWarn.italic = true
-
-            return hl
-        end,
-        
-        plugins = {
-            aerial = true,
-            beacon = false,
-            bufferline = true,
-            cmp = true,
-            dashboard = true,
-            highlighturl = true,
-            hop = false,
-            indent_blankline = true,
-            lightspeed = false,
-            ["neo-tree"] = true,
-            notify = true,
-            ["nvim-tree"] = false,
-            ["nvim-web-devicons"] = true,
-            rainbow = true,
-            symbols_outline = false,
-            telescope = true,
-            treesitter = true,
-            vimwiki = false,
-            ["which-key"] = true,
-        },
-    },
-
     diagnostics = {
         virtual_text = true,
         underline = true,
     },
-    
-    lsp = {
-        servers = {},
-        formatting = {
-            format_on_save = {
-                enabled = true, 
-                allow_filetypes = { 
-                     "go",
-		             "typescript",
-                },
-                ignore_filetypes = { 
-                },
-            },
-            disabled = {},
-            timeout_ms = 1000, 
-        },
-        mappings = {
-            n = {},
-        },
-        ["server-settings"] = {},
-    },
+
+    -- lsp = {
+    --     servers = {},
+    --     formatting = {
+    --         format_on_save = {
+    --             enabled = true,
+    --             allow_filetypes = {
+    --                  "go",
+		  --            "typescript",
+    --             },
+    --             ignore_filetypes = {
+    --             },
+    --         },
+    --         disabled = {},
+    --         timeout_ms = 1000,
+    --     },
+    --     mappings = {
+    --         n = {},
+    --     },
+    --     ["server-settings"] = {},
+    -- },
 
     mappings = {
         n = {
@@ -129,10 +90,18 @@ local config = {
             ["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
             ["<leader>zf"] = { "<cmd>Centerpad 120<cr>", desc = "Center single buffer" },
             ["<leader>zm"] = { "<cmd>MinimapToggle<cr>", desc = "Toggle Minimap" },
+            ["<leader>sf"] = { "<Plug>CtrlSFPrompt", desc = "Search for string in files" },
+            ["<A-j>"]      = { ":m .+1<CR>==", desc = "Move line down" },
+            ["<A-k>"]      = { ":m .-2<CR>==", desc = "Move line up" },
            },
-        t = {},
+        v = {
+            ["<leader>sf"] = { "<Plug>CtrlSFVwordExec", desc = "Search for highlighted string in files" },
+            ["<A-j>"]      = { ":m '>+1<CR>gv=gv", desc = "Move line down" },
+            ["<A-k>"]      = { ":m '<-2<CR>gv=gv", desc = "Move line up" },
+        },
+        i = {},
     },
-    
+
     plugins = {
         init = {
             { "sainnhe/sonokai" },
@@ -147,13 +116,14 @@ local config = {
             },
             { "wfxr/minimap.vim" },
             { "wakatime/vim-wakatime" },
-            { "neoclide/coc.nvim", branch = "release"},
+             { "neoclide/coc.nvim", branch = "release"},
+            { "dyng/ctrlsf.vim" }
         },
-        
-        ["null-ls"] = function(config) 
+
+        ["null-ls"] = function(config)
             config.sources = {
             }
-            return config 
+            return config
         end,
         treesitter = {},
         ["mason-lspconfig"] = {},

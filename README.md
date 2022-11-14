@@ -11,6 +11,7 @@ Ultrawide)
 - Wakatime - Coding metrics
 - CoC - Conquer of Completion - Improved code completion - Tab and S Tab to move
 up and down, C-Space to select
+- Disabled autopair brackets
 
 ## Using
 
@@ -29,24 +30,16 @@ ln -s <directory>/astro-nvim-config/init.lua ~/.config/nvim/lua/user/init.lua
 nvim +PackerSync
 ```
 
-
-
 ## Requirements
 
-* Rust
-* Go
-* Node (v15+)
-* Tree sitter CLI
-
-
+- Rust
+- Go
+- Node (v15+)
+- Tree sitter CLI
 
 **Note:** I am using MesloLGS NF font with ZSH, Oh my ZSH, and powerlevel10k
 
-
-
 ## Installing dependencies
-
-
 
 ### Command line
 
@@ -56,15 +49,11 @@ nvim +PackerSync
 cargo install tree-sitter-cli
 ```
 
-
-
 #### Rust
 
 ```bash
 curl https://sh.rustup.rs -sSf | sh
 ```
-
-
 
 #### Go
 
@@ -78,8 +67,6 @@ Add path to profile
 
 `export PATH=$PATH:/usr/local/go/bin`
 
-
-
 #### Node
 
 ```bash
@@ -91,8 +78,6 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 
 nvm i --lts # Install and use latest LTS
 ```
-
-
 
 #### Lazygit
 
@@ -106,15 +91,11 @@ curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/lates
 lazygit --version
 ```
 
-
-
 #### Minimap
 
 ```bash
 cargo install --locked code-minimap
 ```
-
-
 
 #### Ripgrep
 
@@ -124,8 +105,6 @@ Ubuntu 18.10+ & Debian Buster+
 sudo apt-get install ripgrep
 ```
 
-
-
 Older
 
 ```bash
@@ -134,20 +113,17 @@ curl -LO https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep_
 sudo dpkg -i ripgrep_13.0.0_amd64.deb
 ```
 
-
-
 ### Installing LSP/TS/CoCs
 
 ```vim
 nvim "+CocInstall coc-json coc-tsserver coc-sh coc-css coc-go coc-html coc-lua coc-markdownlint coc-rust-analyzer" "+MasonInstall gopls bash-language-server json-lsp typescript-language-server rust-analyzer css-lsp eslint-lsp html-lsp dockerfile-language-server lua-language-server rstcheck golangci-lint markdownlint goimports luaformatter prettier shfmt rustfmt"
 ```
 
-
-
 ## Todo
 
-* Migrate to dotfile repo
-  * Include zsh config
-* Write installer script
-  * zsh + nvim
-  * nvim only
+- Migrate to dotfile repo
+  - Include zsh config
+- Write installer script
+  - zsh + nvim
+  - nvim only
+

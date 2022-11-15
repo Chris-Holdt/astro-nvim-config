@@ -13,8 +13,10 @@ local config = {
         auto_quit = false,
     },
 
-    colorscheme = "monokai_ristretto",
+    -- colorscheme = "monokai_ristretto",
     -- colorscheme = "sonokai",
+    -- colorscheme = "gruvbox",
+    colorscheme = "spacerain",
 
     highlights = {},
 
@@ -37,6 +39,14 @@ local config = {
             diagnostics_enabled = true,
             status_diagnostics_enabled = true,
             icons_enabled = true,
+            -- sonokai_style = "espresso",
+            go_highlight_types = 1,
+            go_highlight_fields = 1,
+            go_highlight_functions = 1,
+            go_highlight_function_calls = 1,
+            go_highlight_function_parameters = 1,
+            go_highlight_extra_types = 1,
+            go_highlight_operators = 1,
         },
     },
 
@@ -61,27 +71,6 @@ local config = {
         underline = true,
     },
 
-    -- lsp = {
-    --     servers = {},
-    --     formatting = {
-    --         format_on_save = {
-    --             enabled = true,
-    --             allow_filetypes = {
-    --                  "go",
-		  --            "typescript",
-    --             },
-    --             ignore_filetypes = {
-    --             },
-    --         },
-    --         disabled = {},
-    --         timeout_ms = 1000,
-    --     },
-    --     mappings = {
-    --         n = {},
-    --     },
-    --     ["server-settings"] = {},
-    -- },
-
     mappings = {
         n = {
             ["<leader>bb"] = { "<cmd>tabnew<cr>", desc = "New tab" },
@@ -93,7 +82,7 @@ local config = {
             ["<leader>sf"] = { "<Plug>CtrlSFPrompt", desc = "Search for string in files" },
             ["<A-j>"]      = { ":m .+1<CR>==", desc = "Move line down" },
             ["<A-k>"]      = { ":m .-2<CR>==", desc = "Move line up" },
-           },
+        },
         v = {
             ["<leader>sf"] = { "<Plug>CtrlSFVwordExec", desc = "Search for highlighted string in files" },
             ["<A-j>"]      = { ":m '>+1<CR>gv=gv", desc = "Move line down" },
@@ -105,8 +94,12 @@ local config = {
     plugins = {
         init = {
             { "sainnhe/sonokai" },
-            { "rktjmp/lush.nvim" },
+            -- { "~/git/personal/custom-theme/spacerain" },
+            { "morhetz/gruvbox" },
+            { "fatih/molokai" },
+            { "sjl/badwolf" },
             { "tanvirtin/monokai.nvim" },
+            { "rktjmp/lush.nvim" },
             { "smithbm2316/centerpad.nvim" },
             { "kdheepak/lazygit.nvim" },
             { "petertriho/nvim-scrollbar",
@@ -116,8 +109,9 @@ local config = {
             },
             { "wfxr/minimap.vim" },
             { "wakatime/vim-wakatime" },
-             { "neoclide/coc.nvim", branch = "release"},
-            { "dyng/ctrlsf.vim" }
+            { "neoclide/coc.nvim", branch = "release" },
+            { "dyng/ctrlsf.vim" },
+            { "rktjmp/shipwright.nvim" }
         },
 
         ["null-ls"] = function(config)
@@ -162,9 +156,9 @@ local config = {
 
 -- Temporary home of custom keymap
 local keyset = vim.keymap.set
-local opts = {silent = true, noremap = true, expr = true, replace_keycodes = false}
+local opts = { silent = true, noremap = true, expr = true, replace_keycodes = false }
 keyset("i", "<TAB>", [[coc#pum#visible() ? coc#pum#next(1) : "<TAB>"]], opts)
 keyset("i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "<S-TAB>"]], opts)
-keyset("i", "<c-space>", 'coc#refresh()', {silent = true, expr = true})
+keyset("i", "<c-space>", 'coc#refresh()', { silent = true, expr = true })
 
 return config

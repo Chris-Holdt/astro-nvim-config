@@ -2,16 +2,17 @@
 
 ## Changes vs Astronvim
 
-- Colour Scheme: Monokai Ristretto
+- Colour Scheme: Custom theme - Spacerain (WIP)
 - Centerpad, with leader cmd: \<leader\>zf, runs: Centerpad 160 (Used on 34"
-Ultrawide)
+  Ultrawide)
 - Lazygit
 - nvim-minimap, with leader cmd: \<leader\>zm, runs: MinimapToggle
 - scrollbar
 - Wakatime - Coding metrics
 - CoC - Conquer of Completion - Improved code completion - Tab and S Tab to move
-up and down, C-Space to select
+  up and down, C-Space to select
 - Disabled autopair brackets
+- Ctrlsf - Search for words in files
 
 ## Using
 
@@ -22,6 +23,7 @@ up and down, C-Space to select
 git clone https://github.com/Chris-Holdt/astro-nvim-config.git
 
 ln -s <directory>/astro-nvim-config/init.lua ~/.config/nvim/lua/user/init.lua
+ln -s <directory>/astro-nvim-config/colors/spacerain.lua ~/.config/nvim/colors/spacerain.lua
 ```
 
 ## Running
@@ -126,4 +128,3 @@ nvim "+CocInstall coc-json coc-tsserver coc-sh coc-css coc-go coc-html coc-lua c
 - Write installer script
   - zsh + nvim
   - nvim only
-

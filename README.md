@@ -1,4 +1,20 @@
-# Personal Astronvim configuration
+<h1 align="center"> Personal Astronvim configuration </h1>
+
+<div align="center">
+<img src="https://img.shields.io/badge/NeoVim-%2357A143.svg?&style=for-the-badge&logo=neovim&logoColor=white">
+<img src="https://img.shields.io/badge/lua-%231C2D72.svg?style=for-the-badge&logo=lua&logoColor=white">
+
+<img src="https://img.shields.io/github/directory-file-count/chris-holdt/astro-nvim-config?style=for-the-badge">
+<img src="https://img.shields.io/github/repo-size/chris-holdt/astro-nvim-config?style=for-the-badge">
+<img src="https://img.shields.io/github/last-commit/chris-holdt/astro-nvim-config?style=for-the-badge">
+
+<br/>
+<h2>Join the Just for Fun Foundations Discord!</h2>
+<a href="https://discord.gg/dMbb2hCPtP">
+  <img src="https://img.shields.io/badge/Discord-%235864F2.svg?style=for-the-badge&logo=discord&logoColor=white">
+  <img src="https://img.shields.io/discord/1042454525069504645?style=for-the-badge">
+</a>
+</div>
 
 ## Changes vs Astronvim
 
@@ -9,10 +25,11 @@
 - nvim-minimap, with leader cmd: \<leader\>zm, runs: MinimapToggle
 - scrollbar
 - Wakatime - Coding metrics
-- CoC - Conquer of Completion - Improved code completion - Tab and S Tab to move
-  up and down, C-Space to select
+  ~~- CoC - Conquer of Completion - Improved code completion - Tab and S Tab to move
+  up and down, C-Space to select~~
 - Disabled autopair brackets
 - Ctrlsf - Search for words in files
+- Separated config files slightly, updated instructions accordingly
 
 ## Using
 
@@ -22,11 +39,13 @@
 ```bash
 git clone https://github.com/Chris-Holdt/astro-nvim-config.git
 
-ln -s <directory>/astro-nvim-config/init.lua ~/.config/nvim/lua/user/init.lua
+ln -s <directory>/astro-nvim-config/user ~/.config/nvim/lua/user
 ln -s <directory>/astro-nvim-config/colors/spacerain.lua ~/.config/nvim/colors/spacerain.lua
 ```
 
 ## Running
+
+**Note:** To install a bunch of Lang servers etc on first run keep reading, it won't hurt to run this first though.
 
 ```bash
 nvim +PackerSync
@@ -118,7 +137,8 @@ sudo dpkg -i ripgrep_13.0.0_amd64.deb
 ### Installing LSP/TS/CoCs
 
 ```vim
-nvim "+CocInstall coc-json coc-tsserver coc-sh coc-css coc-go coc-html coc-lua coc-markdownlint coc-rust-analyzer" "+MasonInstall gopls bash-language-server json-lsp typescript-language-server rust-analyzer css-lsp eslint-lsp html-lsp dockerfile-language-server lua-language-server rstcheck golangci-lint markdownlint goimports luaformatter prettier shfmt rustfmt"
+~~nvim "+CocInstall coc-json coc-tsserver coc-sh coc-css coc-go coc-html coc-lua coc-markdownlint coc-rust-analyzer" "+MasonInstall gopls bash-language-server json-lsp typescript-language-server rust-analyzer css-lsp eslint-lsp html-lsp dockerfile-language-server lua-language-server rstcheck golangci-lint markdownlint goimports luaformatter prettier shfmt rustfmt"~~
+nvim "+MasonInstall gopls bash-language-server json-lsp typescript-language-server rust-analyzer css-lsp eslint-lsp html-lsp dockerfile-language-server lua-language-server rstcheck golangci-lint markdownlint goimports luaformatter prettier shfmt rustfmt"
 ```
 
 ## Todo

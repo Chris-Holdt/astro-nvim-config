@@ -10,7 +10,7 @@
 
 <br/>
 <h2>Join the Just for Fun Foundations Discord!</h2>
-<a href="https://discord.gg/dMbb2hCPtP">
+<a href="https://discord.gg/Gxz8z9q3hj">
   <img src="https://img.shields.io/badge/Discord-%235864F2.svg?style=for-the-badge&logo=discord&logoColor=white">
   <img src="https://img.shields.io/discord/1042454525069504645?style=for-the-badge">
 </a>

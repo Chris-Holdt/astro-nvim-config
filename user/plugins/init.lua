@@ -17,5 +17,6 @@ return {
     { "wakatime/vim-wakatime" },
     -- { "neoclide/coc.nvim", branch = "release" },
     { "dyng/ctrlsf.vim" },
-    { "rktjmp/shipwright.nvim" }
+    { "rktjmp/shipwright.nvim" },
+    { "tpope/vim-surround" }
 }

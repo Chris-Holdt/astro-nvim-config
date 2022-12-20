@@ -32,7 +32,7 @@ local config = {
             mapleader = " ",
             autoformat_enabled = true,
             cmp_enabled = true,
-            autopairs_enabled = false,
+            autopairs_enabled = true,
             diagnostics_enabled = true,
             status_diagnostics_enabled = true,
             icons_enabled = true,
@@ -68,49 +68,7 @@ local config = {
         underline = true,
     },
 
-    -- mappings = {
-    --     n = {
-    --         ["<leader>bb"] = { "<cmd>tabnew<cr>", desc = "New tab" },
-    --         ["<leader>bc"] = { "<cmd>BufferLinePickClose<cr>", desc = "Pick to close" },
-    --         ["<leader>bj"] = { "<cmd>BufferLinePick<cr>", desc = "Pick to jump" },
-    --         ["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
-    --         ["<leader>zf"] = { "<cmd>Centerpad 120<cr>", desc = "Center single buffer" },
-    --         ["<leader>zm"] = { "<cmd>MinimapToggle<cr>", desc = "Toggle Minimap" },
-    --         ["<leader>sf"] = { "<Plug>CtrlSFPrompt", desc = "Search for string in files" },
-    --         ["<A-j>"]      = { ":m .+1<CR>==", desc = "Move line down" },
-    --         ["<A-k>"]      = { ":m .-2<CR>==", desc = "Move line up" },
-    --     },
-    --     v = {
-    --         ["<leader>sf"] = { "<Plug>CtrlSFVwordExec", desc = "Search for highlighted string in files" },
-    --         ["<A-j>"]      = { ":m '>+1<CR>gv=gv", desc = "Move line down" },
-    --         ["<A-k>"]      = { ":m '<-2<CR>gv=gv", desc = "Move line up" },
-    --     },
-    --     i = {},
-    -- },
-
     plugins = {
-        -- init = {
-        --     { "sainnhe/sonokai" },
-        --     -- { "~/git/personal/custom-theme/spacerain" },
-        --     { "morhetz/gruvbox" },
-        --     { "fatih/molokai" },
-        --     { "sjl/badwolf" },
-        --     { "tanvirtin/monokai.nvim" },
-        --     { "rktjmp/lush.nvim" },
-        --     { "smithbm2316/centerpad.nvim" },
-        --     { "kdheepak/lazygit.nvim" },
-        --     { "petertriho/nvim-scrollbar",
-        --         config = function()
-        --             require("scrollbar").setup()
-        --         end,
-        --     },
-        --     { "wfxr/minimap.vim" },
-        --     { "wakatime/vim-wakatime" },
-        --     { "neoclide/coc.nvim", branch = "release" },
-        --     { "dyng/ctrlsf.vim" },
-        --     { "rktjmp/shipwright.nvim" }
-        -- },
-
         ["null-ls"] = function(config)
             config.sources = {
             }
@@ -150,15 +108,5 @@ local config = {
     polish = function()
     end,
 }
-
--- Temporary home of custom keymap
--- local keyset = vim.keymap.set
--- local opts = { silent = true, noremap = true, expr = true, replace_keycodes = false }
--- keyset("i", "<TAB>", [[coc#pum#visible() ? coc#pum#next(1) : "<TAB>"]], opts) -- Next option
--- keyset("i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "<S-TAB>"]], opts) -- Previous option
--- keyset("i", "<CR>", [[coc#pum#visible() ? coc#pum#confirm() : "<CR>"]], opts) -- Accept selected
--- keyset("n", "<leader>rn", "<Plug>(coc-rename)", { silent = true }) -- Trigger rename
--- keyset("i", "<c-space>", 'coc#refresh()', { silent = true, expr = true }) -- Trigger completion
--- keyset("i", "<c-CR>", [[coc#pum#visible() ? coc#confirm() : "<c-CR>"]], { silent = true, expr = true })
 
 return config

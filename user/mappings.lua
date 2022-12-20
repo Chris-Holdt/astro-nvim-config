@@ -9,6 +9,10 @@ local mappings = {
         ["<leader>sf"] = { "<Plug>CtrlSFPrompt", desc = "Search for string in files" },
         ["<A-j>"]      = { ":m .+1<CR>==", desc = "Move line down" },
         ["<A-k>"]      = { ":m .-2<CR>==", desc = "Move line up" },
+        ["<C-u>"]      = { "<C-u>zz", desc = "Move cursor half page up and center view" },
+        ["<C-d>"]      = { "<C-d>zz", desc = "Move cursor half page down and center view" },
+        ["n"]          = { "nzzzv", desc = "Improved search lookaround forward" },
+        ["N"]          = { "Nzzzv", desc = "Improved search lookaround backwards" },
     },
     v = {
         ["<leader>sf"] = { "<Plug>CtrlSFVwordExec", desc = "Search for highlighted string in files" },

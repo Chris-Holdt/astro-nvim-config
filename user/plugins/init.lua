@@ -15,8 +15,12 @@ return {
     },
     { "wfxr/minimap.vim" },
     { "wakatime/vim-wakatime" },
-    -- { "neoclide/coc.nvim", branch = "release" },
     { "dyng/ctrlsf.vim" },
     { "rktjmp/shipwright.nvim" },
-    { "tpope/vim-surround" }
+    { "kylechui/nvim-surround",
+        tag = "*",
+        config = function()
+            require("nvim-surround").setup()
+        end,
+    }
 }

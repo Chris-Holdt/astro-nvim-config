@@ -1,19 +1,19 @@
 local config = {
 
-    updater = {
-        remote = "origin",
-        channel = "nightly",
-        version = "latest",
-        branch = "main",
-        commit = nil,
-        pin_plugins = nil,
-        skip_prompts = false,
-        show_changelog = true,
-        auto_reload = false,
-        auto_quit = false,
-    },
+    -- updater = {
+    --     remote = "origin",
+    --     channel = "stable",
+    --     version = "latest",
+    --     branch = "main",
+    --     commit = nil,
+    --     pin_plugins = nil,
+    --     skip_prompts = false,
+    --     show_changelog = true,
+    --     auto_reload = false,
+    --     auto_quit = false,
+    -- },
 
-    colorscheme = "spacerain",
+    colorscheme = "catppuccin-latte",
 
     highlights = {},
 
@@ -27,6 +27,7 @@ local config = {
             tabstop = 4,
             softtabstop = 4,
             shiftwidth = 4,
+            background = "light"
         },
         g = {
             mapleader = " ",

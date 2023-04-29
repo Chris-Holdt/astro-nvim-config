@@ -1,18 +1,10 @@
 
 local mappings = {
     n = {
-        -- ["<leader>zg"] = {"<cmd>exec '!gdformat \"%\"'<cr>", desc = "Format GDScript file (function)" },
-        -- ["<leader>zg"] = {
-        --     function()
-        --         vim.cmd(string.format("exec '!gdformat \'%\''"))
-        --         -- vim.cmd "gdformat '%'"
-        --         -- vim.cmd "e ++ff =dos"
-        --         -- vim.cmd "set ff=unix"
-        --         -- vim.cmd "silent! write"
-        --     end, desc = "Format GDScript file (function)" },
-        ["<leader>zg"] = { "<cmd>!gdformat '%' <cr> <cmd>e ++ff=dos <cr> <cmd>set ff=unix <cr> <cmd>w<cr>", desc = "Format GDScript file" },
+        -- ["<leader>zg"] = { "<cmd>!gdformat '%' <cr> <cmd>e ++ff=dos <cr> <cmd>set ff=unix <cr> <cmd>w<cr>", desc = "Format GDScript file" },
+        ["<leader>zg"] = { "<cmd>!godot '%'<cr>", desc = "Run this Godot file" },
         ["<leader>zf"] = { "<cmd>Centerpad 120<cr>", desc = "Center single buffer" },
-        ["<leader>zm"] = { "<cmd>MinimapToggle<cr>", desc = "Toggle Minimap" },
+        -- ["<leader>zm"] = { "<cmd>MinimapToggle<cr>", desc = "Toggle Minimap" },
         -- ["<leader>sf"] = { "<Plug>CtrlSFPrompt", desc = "Search for string in files" },
         ["<A-j>"]      = { ":m .+1<CR>==", desc = "Move line down" },
         ["<A-k>"]      = { ":m .-2<CR>==", desc = "Move line up" },

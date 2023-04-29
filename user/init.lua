@@ -1,18 +1,5 @@
 local config = {
 
-    -- updater = {
-    --     remote = "origin",
-    --     channel = "stable",
-    --     version = "latest",
-    --     branch = "main",
-    --     commit = nil,
-    --     pin_plugins = nil,
-    --     skip_prompts = false,
-    --     show_changelog = true,
-    --     auto_reload = false,
-    --     auto_quit = false,
-    -- },
-
     colorscheme = "catppuccin-latte",
 
     highlights = {},
@@ -37,7 +24,6 @@ local config = {
             diagnostics_enabled = true,
             status_diagnostics_enabled = true,
             icons_enabled = true,
-            -- sonokai_style = "espresso",
             go_highlight_types = 1,
             go_highlight_fields = 1,
             go_highlight_functions = 1,
@@ -106,6 +92,25 @@ local config = {
         },
     },
 
+    lsp = {
+        servers = {
+            "gdscript"
+        },
+        config = {
+            gdscript = function()
+                return {
+                    force_setup = true,
+                    single_file_support = false,
+                    cmd = {
+                        "ncat", "127.0.0.1", "6008"
+                    },
+                    root_dir = require("lspconfig.util").root_pattern("project.godot", ".git"),
+                    filetypes = {"gd", "gdscript", "gdscript3"}
+                }
+         end,
+        },
+    },
+ 
     polish = function()
         -- Fix for tabbing in insert mode jumping to previous snippet location
         local luasnip = require('luasnip')

@@ -1,5 +1,5 @@
 return {
-    { "catppuccin/nvim", as = "catppuccin" },
+    { "catppuccin/nvim",                                     as = "catppuccin" },
     { "morhetz/gruvbox" },
     { "p00f/alabaster.nvim" },
     { "https://gitlab.com/protesilaos/tempus-themes-vim.git" },
@@ -12,11 +12,12 @@ return {
     { "vim-scripts/pyte" },
     { "mkarmona/materialbox" },
     { "Th3Whit3Wolf/one-nvim" },
-    { "sonph/onehalf", rtp = "vim" },
+    { "sonph/onehalf",                                       rtp = "vim" },
     { "rktjmp/lush.nvim" },
     { "smithbm2316/centerpad.nvim" },
     { "kdheepak/lazygit.nvim" },
-    { "petertriho/nvim-scrollbar",
+    {
+        "petertriho/nvim-scrollbar",
         config = function()
             require("scrollbar").setup()
         end,
@@ -25,8 +26,10 @@ return {
     { "wakatime/vim-wakatime" },
     { "dyng/ctrlsf.vim" },
     { "rktjmp/shipwright.nvim" },
-    { "kylechui/nvim-surround",
-        tag = "*",
+    {
+        "kylechui/nvim-surround",
+        version = "*",
+        event = "VeryLazy",
         config = function()
             require("nvim-surround").setup()
         end,
@@ -35,4 +38,7 @@ return {
     { "othree/html5.vim" },
     { "evanleck/vim-svelte" },
     { "prettier/vim-prettier" },
+    { "habamax/vim-godot" },
+    { "nvim-lua/plenary.nvim" },
+    { "ThePrimeagen/harpoon" },
 }
